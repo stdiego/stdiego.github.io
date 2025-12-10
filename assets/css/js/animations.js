@@ -66,3 +66,29 @@ if (toggle) {
         document.body.classList.toggle("light");
     });
 }
+// === BARRAS DE HABILIDADES ===
+const skills = document.querySelectorAll(".progress");
+
+const skillObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.width = entry.target.dataset.width;
+        }
+    });
+});
+
+skills.forEach(skill => skillObserver.observe(skill));
+
+// === CONTADORES ===
+const counters = document.querySelectorAll(".counter");
+
+counters.forEach(counter => {
+    let target = +counter.dataset.target;
+    let count = 0;
+
+    let interval = setInterval(() => {
+        count++;
+        counter.innerText = count;
+        if (count === target) clearInterval(interval);
+    }, 20);
+});
