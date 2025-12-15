@@ -1,134 +1,324 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Portafolio de StDiego - Ingeniero especializado en Ciencia de Datos, Big Data y Desarrollo Web. Proyectos de análisis de datos, automatización y desarrollo digital.">
+    <meta name="keywords"
+        content="portafolio, desarrollo web, ciencia de datos, big data, python, javascript, programación">
+    <meta name="author" content="StDiego">
     <title>Portafolio | StDiego</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
 
-<header>
-    <h1>StDiego</h1>
-    <p>Ingeniería • Ciencia de Datos • Desarrollo Digital</p>
-
-    <nav>
-        <a href="index.html">Inicio</a>
-        <a href="projects.html">Proyectos</a>
-        <a href="https://github.com/stdiego" target="_blank">GitHub</a>
-    </nav>
-</header>
-
-<section class="intro">
-    <h2>Transformando datos e ideas en soluciones digitales</h2>
-    <p>
-        Desarrollo proyectos enfocados en análisis de datos, automatización,
-        prototipos web e innovación digital. Este portafolio muestra parte de
-        mi trabajo académico y personal en tecnología.
-    </p>
-</section>
-
-<section class="destacados">
-
-    <div class="card">
-        <h3>Big Data & Análisis</h3>
-        <p>Procesamiento, visualización y análisis de datos con Python.</p>
-        <a href="projects/bigdata.html">Explorar</a>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader">
+            <div class="loader-circle"></div>
+            <h2>StDiego</h2>
+            <p>Cargando portafolio...</p>
+        </div>
     </div>
 
-    <div class="card">
-        <h3>Invitaciones Digitales</h3>
-        <p>Diseños web interactivos con HTML, CSS y animaciones.</p>
-        <a href="projects/invitacion.html">Ver demo</a>
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <header>
+        <h1>StDiego</h1>
+        <p class="typing-container">
+            <span id="typed-text"></span>
+            <span class="cursor-blink">|</span>
+        </p>
+
+        <nav>
+            <a href="index.html" id="nav-home">Inicio</a>
+            <a href="projects.html" id="nav-projects">Proyectos</a>
+            <a href="https://github.com/stdiego" target="_blank" id="nav-github" rel="noopener noreferrer">GitHub</a>
+        </nav>
+    </header>
+
+    <section class="intro">
+        <h2>Transformando datos e ideas en soluciones digitales</h2>
+        <p>
+            Desarrollo proyectos enfocados en análisis de datos, automatización,
+            prototipos web e innovación digital. Este portafolio muestra parte de
+            mi trabajo académico y personal en tecnología.
+        </p>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-avatar">
+                <div class="avatar-placeholder">
+                    <span>👨‍💻</span>
+                </div>
+            </div>
+            <div class="about-content">
+                <h2>Sobre Mí</h2>
+                <p>
+                    Apasionado por la tecnología y el análisis de datos, me especializo en crear
+                    soluciones innovadoras que transforman información compleja en insights accionables.
+                    Mi enfoque combina ingeniería de software con ciencia de datos.
+                </p>
+                <div class="about-highlights">
+                    <div class="highlight">
+                        <span class="highlight-icon">🎓</span>
+                        <h4>Formación</h4>
+                        <p>Ingeniería + Data Science</p>
+                    </div>
+                    <div class="highlight">
+                        <span class="highlight-icon">💡</span>
+                        <h4>Enfoque</h4>
+                        <p>Soluciones Innovadoras</p>
+                    </div>
+                    <div class="highlight">
+                        <span class="highlight-icon">🚀</span>
+                        <h4>Objetivo</h4>
+                        <p>Impacto con Tecnología</p>
+                    </div>
+                </div>
+                <div class="about-actions">
+                    <a href="#contact-form" class="btn-primary">Contáctame</a>
+                    <a href="https://github.com/stdiego" target="_blank" class="btn-secondary">Ver GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="destacados">
+
+        <div class="card">
+            <h3>Big Data & Análisis</h3>
+            <p>Procesamiento, visualización y análisis de datos con Python.</p>
+            <a href="projects/bigdata.html">Explorar</a>
+        </div>
+
+        <div class="card">
+            <h3>Invitaciones Digitales</h3>
+            <p>Diseños web interactivos con HTML, CSS y animaciones.</p>
+            <a href="projects/invitacion.html">Ver demo</a>
+        </div>
+
+        <div class="card">
+            <h3>Quiz Interactivo</h3>
+            <p>Aplicaciones web dinámicas con JavaScript.</p>
+            <a href="projects/quiz.html">Probar</a>
+        </div>
+
+    </section>
+
+    <section class="skills">
+        <h2>Habilidades Técnicas</h2>
+
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>💻 Frontend</h3>
+                <div class="skill-items">
+                    <div class="skill-badge">
+                        <span class="skill-icon">🌐</span>
+                        <span>HTML5</span>
+                    </div>
+                    <div class="skill-badge">
+                        <span class="skill-icon">🎨</span>
+                        <span>CSS3</span>
+                    </div>
+                    <div class="skill-badge">
+                        <span class="skill-icon">⚡</span>
+                        <span>JavaScript</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>🐍 Backend & Data</h3>
+                <div class="skill-items">
+                    <div class="skill-badge">
+                        <span class="skill-icon">🐍</span>
+                        <span>Python</span>
+                    </div>
+                    <div class="skill-badge">
+                        <span class="skill-icon">📊</span>
+                        <span>Pandas</span>
+                    </div>
+                    <div class="skill-badge">
+                        <span class="skill-icon">🔢</span>
+                        <span>NumPy</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>🛠️ Herramientas</h3>
+                <div class="skill-items">
+                    <div class="skill-badge">
+                        <span class="skill-icon">📁</span>
+                        <span>Git</span>
+                    </div>
+                    <div class="skill-badge">
+                        <span class="skill-icon">📓</span>
+                        <span>Jupyter</span>
+                    </div>
+                    <div class="skill-badge">
+                        <span class="skill-icon">💾</span>
+                        <span>SQL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="traditional-skills">
+            <div class="skill">
+                <div class="skill-header">
+                    <span>🐍 Python</span>
+                    <span class="skill-percent">90%</span>
+                </div>
+                <div class="bar">
+                    <div class="progress" data-width="90%"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-header">
+                    <span>🌐 HTML & CSS</span>
+                    <span class="skill-percent">85%</span>
+                </div>
+                <div class="bar">
+                    <div class="progress" data-width="85%"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-header">
+                    <span>⚡ JavaScript</span>
+                    <span class="skill-percent">75%</span>
+                </div>
+                <div class="bar">
+                    <div class="progress" data-width="75%"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-header">
+                    <span>📊 Data Science</span>
+                    <span class="skill-percent">80%</span>
+                </div>
+                <div class="bar">
+                    <div class="progress" data-width="80%"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="stat">
+            <h3 class="counter" data-target="10">0</h3>
+            <p>Proyectos</p>
+        </div>
+
+        <div class="stat">
+            <h3 class="counter" data-target="5">0</h3>
+            <p>Tecnologías</p>
+        </div>
+
+        <div class="stat">
+            <h3 class="counter" data-target="100">0</h3>
+            <p>Horas de código</p>
+        </div>
+    </section>
+
+    <section class="cv">
+        <h2>Hoja de Vida</h2>
+        <a href="#" class="cv-btn">Descargar CV</a>
+    </section>
+
+    <section class="contacto">
+        <h2>Contacto</h2>
+        <form id="contact-form">
+            <label for="contact-name">
+                Nombre
+                <input type="text" id="contact-name" name="name" required>
+            </label>
+
+            <label for="contact-email">
+                Correo
+                <input type="email" id="contact-email" name="email" required>
+            </label>
+
+            <label for="contact-message">
+                Mensaje
+                <textarea id="contact-message" name="message" required></textarea>
+            </label>
+
+            <button type="submit" id="contact-submit">Enviar</button>
+        </form>
+
+    </section>
+
+
+
+
+
+
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>StDiego</h3>
+                <p>Transformando datos e ideas en soluciones digitales</p>
+            </div>
+            <div class="footer-section">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="#about">Sobre Mí</a></li>
+                    <li><a href="projects.html">Proyectos</a></li>
+                    <li><a href="#contact-form">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Sígueme</h4>
+                <div class="social-links">
+                    <a href="https://github.com/stdiego" target="_blank" rel="noopener noreferrer" title="GitHub">
+                        <span>⭐</span> GitHub
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                        <span>💼</span> LinkedIn
+                    </a>
+                    <a href="mailto:contact@stdiego.com" title="Email">
+                        <span>✉️</span> Email
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© <span id="current-year"></span> StDiego | Hecho con 💙 y ☕</p>
+        </div>
+    </footer>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-actions">
+        <a href="#contact-form" class="fab fab-contact" title="Contacto">
+            <span>✉️</span>
+        </a>
+        <a href="https://github.com/stdiego" target="_blank" class="fab fab-github" title="GitHub">
+            <span>⭐</span>
+        </a>
+        <button id="back-to-top" class="fab fab-top" title="Volver arriba">
+            <span>↑</span>
+        </button>
     </div>
 
-    <div class="card">
-        <h3>Quiz Interactivo</h3>
-        <p>Aplicaciones web dinámicas con JavaScript.</p>
-        <a href="projects/quiz.html">Probar</a>
-    </div>
-
-</section>
-
-<section class="skills">
-    <h2>Habilidades Técnicas</h2>
-
-    <div class="skill">
-        <span>Python</span>
-        <div class="bar"><div class="progress" data-width="90%"></div></div>
-    </div>
-
-    <div class="skill">
-        <span>HTML & CSS</span>
-        <div class="bar"><div class="progress" data-width="85%"></div></div>
-    </div>
-
-    <div class="skill">
-        <span>JavaScript</span>
-        <div class="bar"><div class="progress" data-width="70%"></div></div>
-    </div>
-
-    <div class="skill">
-        <span>Data Science</span>
-        <div class="bar"><div class="progress" data-width="80%"></div></div>
-    </div>
-</section>
-
-<section class="stats">
-    <div class="stat">
-        <h3 class="counter" data-target="10">0</h3>
-        <p>Proyectos</p>
-    </div>
-
-    <div class="stat">
-        <h3 class="counter" data-target="5">0</h3>
-        <p>Tecnologías</p>
-    </div>
-
-    <div class="stat">
-        <h3 class="counter" data-target="100">0</h3>
-        <p>Horas de código</p>
-    </div>
-</section>
-
-<section class="cv">
-    <h2>Hoja de Vida</h2>
-    <a href="#" class="cv-btn">Descargar CV</a>
-</section>
-
-<section class="contacto">
-    <h2>Contacto</h2>
-    <form>
-        <label>
-            Nombre
-            <input type="text" required>
-        </label>
-
-        <label>
-            Correo
-            <input type="email" required>
-        </label>
-
-        <label>
-            Mensaje
-            <textarea></textarea>
-        </label>
-
-        <button type="submit">Enviar</button>
-    </form>
-
-</section>
-
-
-
-
-
-
-
-<footer>
-    © 2025 | Portafolio Digital StDiego
-</footer>
-<button id="theme-toggle">Modo</button>
-<script src="./assets/js/animations.js"></script>
+    <button id="theme-toggle" aria-label="Cambiar tema de color">🌓 Modo</button>
+    <script src="assets/js/animations.js"></script>
 
 </body>
+
 </html>

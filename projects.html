@@ -1,45 +1,79 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Proyectos de desarrollo web, análisis de datos y programación de StDiego">
     <title>Proyectos | StDiego</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
 
-<header>
-    <h1>Mis Proyectos</h1>
-    <nav>
-        <a href="index.html">Inicio</a>
-        <a href="projects.html">Proyectos</a>
-    </nav>
-</header>
+    <header>
+        <h1>Mis Proyectos</h1>
+        <p>Explora mi trabajo en desarrollo web, análisis de datos y más</p>
+        <nav>
+            <a href="index.html" id="nav-home">Inicio</a>
+            <a href="projects.html" id="nav-projects">Proyectos</a>
+            <a href="https://github.com/stdiego" target="_blank" id="nav-github" rel="noopener noreferrer">GitHub</a>
+        </nav>
+    </header>
 
-<section class="grid">
+    <section class="grid">
 
-    <div class="card">
-        <h3>Big Data</h3>
-        <p>Análisis de grandes volúmenes de datos con Python.</p>
-        <a href="projects/bigdata.html">Abrir</a>
-    </div>
+        <div class="card">
+            <img src="assets/images/bigdata.png" alt="Visualización de proyecto Big Data"
+                onerror="this.style.display='none'">
+            <h3>🔍 Big Data & Análisis</h3>
+            <p>Procesamiento y análisis de grandes volúmenes de datos utilizando Python, Pandas y NumPy con
+                visualizaciones interactivas.</p>
+            <div class="tech-tags">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Pandas</span>
+                <span class="tech-tag">NumPy</span>
+            </div>
+            <a href="projects/bigdata.html">Ver detalles →</a>
+        </div>
 
-    <div class="card">
-        <h3>Invitación Web</h3>
-        <p>Invitación digital interactiva en HTML.</p>
-        <a href="projects/invitacion.html">Abrir</a>
-    </div>
+        <div class="card">
+            <img src="assets/images/invitation.png" alt="Preview de invitación digital"
+                onerror="this.style.display='none'">
+            <h3>💌 Invitación Digital</h3>
+            <p>Diseño web elegante e interactivo para invitaciones digitales con animaciones CSS y effects visuales
+                atractivos.</p>
+            <div class="tech-tags">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">Animations</span>
+            </div>
+            <a href="projects/invitacion.html">Ver demo →</a>
+        </div>
 
-    <div class="card">
-        <h3>Quiz</h3>
-        <p>Juego de preguntas con JavaScript.</p>
-        <a href="projects/quiz.html">Abrir</a>
-    </div>
+        <div class="card">
+            <img src="assets/images/quiz.png" alt="Aplicación de quiz interactivo" onerror="this.style.display='none'">
+            <h3>🎮 Quiz Interactivo</h3>
+            <p>Aplicación web dinámica de trivia con sistema de puntuación, temporizador y múltiples categorías de
+                preguntas.</p>
+            <div class="tech-tags">
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+            </div>
+            <a href="projects/quiz.html">Probar quiz →</a>
+        </div>
 
-</section>
+    </section>
 
-<footer>
-    <p>© 2025 | Portafolio StDiego</p>
-</footer>
+    <footer>
+        <p>© 2025 | Portafolio StDiego | <a href="https://github.com/stdiego" target="_blank" rel="noopener noreferrer"
+                style="color: #38bdf8;">GitHub</a></p>
+    </footer>
+
+    <button id="theme-toggle" aria-label="Cambiar tema de color">🌓 Modo</button>
+    <script src="assets/js/animations.js"></script>
 
 </body>
+
 </html>

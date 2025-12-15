@@ -1,10 +1,152 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Quiz interactivo con JavaScript - Aplicación de trivia con sistema de puntuación">
+    <title>Quiz Interactivo | StDiego</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
+
 <body>
 
+    <header>
+        <h1>🎮 Quiz Interactivo</h1>
+        <nav>
+            <a href="../index.html" id="nav-home">Inicio</a>
+            <a href="../projects.html" id="nav-projects">Proyectos</a>
+            <a href="https://github.com/stdiego" target="_blank" id="nav-github" rel="noopener noreferrer">GitHub</a>
+        </nav>
+    </header>
+
+    <div class="project-detail">
+        <div class="project-header">
+            <img src="../assets/images/quiz.png" alt="Aplicación de quiz interactivo" class="project-image">
+
+            <div class="tech-tags">
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">LocalStorage</span>
+            </div>
+        </div>
+
+        <section class="detalle">
+            <h2>📋 Descripción General</h2>
+            <p>
+                Aplicación web interactiva de trivia/quiz desarrollada con JavaScript vanilla.
+                El proyecto presenta un sistema completo de preguntas y respuestas con
+                retroalimentación instantánea, sistema de puntuación y estadísticas.
+            </p>
+            <p>
+                Perfecta para demostrar habilidades en manipulación del DOM, manejo de eventos,
+                lógica de programación y creación de interfaces interactivas sin frameworks.
+            </p>
+
+            <h2>✨ Características Principales</h2>
+            <ul>
+                <li><strong>Preguntas dinámicas:</strong> Sistema de carga aleatoria de preguntas</li>
+                <li><strong>Múltiple elección:</strong> 4 opciones de respuesta por pregunta</li>
+                <li><strong>Retroalimentación instantánea:</strong> Indicador visual de respuestas correctas/incorrectas
+                </li>
+                <li><strong>Sistema de puntuación:</strong> Tracking de aciertos y fallos en tiempo real</li>
+                <li><strong>Temporizador:</strong> Cuenta regresiva opcional por pregunta</li>
+                <li><strong>Progreso visual:</strong> Barra de progreso del quiz</li>
+                <li><strong>Resultados finales:</strong> Pantalla de resultados con estadísticas</li>
+                <li><strong>Categorías múltiples:</strong> Diferentes temas de trivia</li>
+            </ul>
+
+            <h2>🎯 Funcionalidades Interactivas</h2>
+            <ul>
+                <li><strong>Botones animados:</strong> Feedback visual al seleccionar respuestas</li>
+                <li><strong>Efectos de sonido:</strong> Audio para respuestas correctas/incorrectas (opcional)</li>
+                <li><strong>Modo de práctica:</strong> Sin límite de tiempo para aprender</li>
+                <li><strong>Modo competitivo:</strong> Con temporizador para desafío</li>
+                <li><strong>Guardar progreso:</strong> LocalStorage para no perder avance</li>
+                <li><strong>Historial de puntuaciones:</strong> Registro de mejores scores</li>
+            </ul>
+
+            <h2>🛠️ Tecnologías y Técnicas</h2>
+            <p><strong>Frontend:</strong></p>
+            <ul>
+                <li><strong>JavaScript ES6+:</strong> Funciones flecha, destructuring, spread operator</li>
+                <li><strong>DOM Manipulation:</strong> querySelector, addEventListener, innerHTML</li>
+                <li><strong>HTML5:</strong> Estructura semántica con data attributes</li>
+                <li><strong>CSS3:</strong> Flexbox, Grid, transitions y animations</li>
+                <li><strong>LocalStorage API:</strong> Persistencia de datos del usuario</li>
+            </ul>
+
+            <h2>💻 Conceptos de Programación Aplicados</h2>
+            <ul>
+                <li><strong>Arrays y Objetos:</strong> Gestión de preguntas y respuestas</li>
+                <li><strong>Control de flujo:</strong> Lógica condicional y loops</li>
+                <li><strong>Event Handling:</strong> Click, submit, keypress events</li>
+                <li><strong>Funciones:</strong> Modularización del código</li>
+                <li><strong>Estado de aplicación:</strong> Gestión de score, currentQuestion, timer</li>
+                <li><strong>Validación:</strong> Verificación de respuestas</li>
+            </ul>
+
+            <h2>🎨 Diseño e Interfaz</h2>
+            <ul>
+                <li>UI moderna con gradientes vibrantes (púrpura y azul)</li>
+                <li>Cards con glassmorphism para preguntas</li>
+                <li>Botones con hover effects y estados activos</li>
+                <li>Animaciones suaves en transiciones de preguntas</li>
+                <li>Diseño completamente responsivo</li>
+                <li>Modo oscuro/claro opcional</li>
+            </ul>
+
+            <h2>📊 Características de los Datos</h2>
+            <ul>
+                <li>Banco de preguntas organizado por categorías</li>
+                <li>Difficulty levels: Fácil, Medio, Difícil</li>
+                <li>Formato JSON para fácil expansión</li>
+                <li>Posibilidad de integración con API de trivia externa</li>
+            </ul>
+
+            <h2>🚀 Posibles Mejoras Futuras</h2>
+            <ul>
+                <li>Integración con Open Trivia Database API</li>
+                <li>Sistema de usuarios y login</li>
+                <li>Leaderboard global</li>
+                <li>Modo multijugador en tiempo real</li>
+                <li>Más categorías y miles de preguntas</li>
+            </ul>
+
+            <h2>🎓 Aprendizajes</h2>
+            <p>
+                Este proyecto me permitió consolidar conocimientos fundamentales de JavaScript,
+                incluyendo manipulación del DOM, manejo de eventos, gestión de estado de aplicación,
+                y creación de interfaces de usuario interactivas sin depender de frameworks.
+            </p>
+
+            <h2>🔗 Demo y Código</h2>
+            <p>
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                    🎮 Jugar ahora
+                </a>
+            </p>
+            <p>
+                <a href="https://github.com/stdiego" target="_blank" rel="noopener noreferrer">
+                    💻 Ver código en GitHub
+                </a>
+            </p>
+            <p style="margin-top: 20px;">
+                <a href="../projects.html" style="color: #38bdf8;">
+                    ← Volver a Proyectos
+                </a>
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        <p>Proyecto desarrollado por StDiego | © 2025</p>
+    </footer>
+
+    <button id="theme-toggle" aria-label="Cambiar tema de color">🌓 Modo</button>
+    <script src="../assets/js/animations.js"></script>
+
 </body>
+
 </html>
