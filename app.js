@@ -55,14 +55,14 @@ document.addEventListener('DOMContentLoaded', () => {
 // UTILITY FUNCTIONS
 // ============================================================================
 
-const formatNumber = (value) => new Intl.NumberFormat("es-CO").format(Number(value || 0));
+const formatNumber = (value) => new Intl.NumberFormat("en-US").format(Number(value || 0));
 
 const formatDate = (value) => {
   const text = String(value || "").trim();
   if (!text) return "-";
   const parsed = new Date(`${text}T00:00:00`);
   if (Number.isNaN(parsed.getTime())) return text;
-  return parsed.toLocaleDateString("es-CO", { year: "numeric", month: "short", day: "numeric" });
+  return parsed.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
 };
 
 const escapeHtml = (value) => String(value || "")
@@ -184,7 +184,7 @@ const renderHero = () => {
   }
 
   if (ui.heroSubtitle) {
-    ui.heroSubtitle.innerHTML = `Ingeniero en Automática Industrial & Ingeniero de Sistemas <br> Especialista en Automatización, Ciberseguridad y Desarrollo de Software`;
+    ui.heroSubtitle.innerHTML = `Industrial Automation Engineer &amp; Systems Engineer <br> Specialist in Automation, Cybersecurity and Software Development`;
   }
 
   // Hero metrics removed - KPIs not needed
@@ -198,45 +198,45 @@ const getThemeInfo = (theme) => {
   const infoMap = {
     "software-datos": {
       icon: "fas fa-code",
-      focus: "Desarrollo, bases de datos, IA"
+      focus: "Development, databases, AI"
     },
     "telecom-redes": {
       icon: "fas fa-network-wired",
-      focus: "Redes, telecomunicaciones, NGN"
+      focus: "Networks, telecommunications, NGN"
     },
     "electronica-automatizacion": {
       icon: "fas fa-microchip",
-      focus: "PLC, control, electrónica de potencia"
+      focus: "PLC, control, power electronics"
     },
     "ambiental-energia": {
       icon: "fas fa-leaf",
-      focus: "Medio ambiente, energía renovable"
+      focus: "Environment, renewable energy"
     },
     "agro-bio": {
       icon: "fas fa-seedling",
-      focus: "Agricultura, alimentos, biología"
+      focus: "Agriculture, food, biology"
     },
     "gestion-negocio": {
       icon: "fas fa-briefcase",
-      focus: "Gestión, finanzas, negocios"
+      focus: "Management, finance, business"
     },
     "salud-social": {
       icon: "fas fa-heartbeat",
-      focus: "Salud, ciencias sociales"
+      focus: "Health, social sciences"
     },
     "ciencias-base": {
       icon: "fas fa-flask",
-      focus: "Matemáticas, física, modelado"
+      focus: "Mathematics, physics, modeling"
     },
     "interdisciplinario": {
       icon: "fas fa-project-diagram",
-      focus: "Proyectos multidisciplinarios"
+      focus: "Multidisciplinary projects"
     }
   };
 
   return infoMap[theme.id] || {
     icon: "fas fa-folder",
-    focus: "Proyectos técnicos"
+    focus: "Technical projects"
   };
 };
 
@@ -252,7 +252,7 @@ const renderCategoryTabs = () => {
           type="button"
           class="tab-card ${state.activeTheme === theme.id ? "is-active" : ""}"
           data-theme="${escapeHtml(theme.id)}"
-          aria-label="Categoría ${escapeHtml(theme.label)}"
+          aria-label="Category ${escapeHtml(theme.label)}"
         >
           <span class="tab-card-icon">
             <i class="${escapeHtml(info.icon)}" aria-hidden="true"></i>
@@ -261,8 +261,8 @@ const renderCategoryTabs = () => {
             <strong>${escapeHtml(theme.label)}</strong>
             <small>${escapeHtml(info.focus)}</small>
             <span class="tab-card-stats">
-              <span>${formatNumber(theme.projectCount)} proyectos</span>
-              <span>${formatNumber(theme.fileCount)} archivos</span>
+              <span>${formatNumber(theme.projectCount)} projects</span>
+              <span>${formatNumber(theme.fileCount)} files</span>
               <span>score ${formatNumber(theme.evidenceScore)}</span>
             </span>
           </span>
@@ -315,7 +315,7 @@ const renderCategoryPanel = () => {
     ui.categoryPanels.innerHTML = `
       <div class="empty-state">
         <i class="fas fa-folder-open"></i>
-        <p>No hay proyectos disponibles en esta categoría</p>
+        <p>No projects available in this category</p>
       </div>
     `;
     return;
@@ -332,7 +332,7 @@ const renderCategoryPanel = () => {
         <i class="${escapeHtml(getThemeInfo(theme).icon)}"></i>
         ${escapeHtml(theme.label)}
       </h3>
-      <p>${formatNumber(projects.length)} proyectos encontrados</p>
+      <p>${formatNumber(projects.length)} projects found</p>
     </div>
     
     <div class="projects-grid">
@@ -343,7 +343,7 @@ const renderCategoryPanel = () => {
       <div class="load-more-wrap">
         <button class="load-more-btn" onclick="loadMoreProjects()">
           <i class="fas fa-chevron-down"></i>
-          Mostrar más proyectos (${projects.length - visibleCount} restantes)
+          Show more projects (${projects.length - visibleCount} remaining)
         </button>
       </div>
     ` : ""}
@@ -377,13 +377,13 @@ const renderProjectCard = (project) => {
 
     if (deliverables.length > 0) {
       const activities = [];
-      if (hasCode) activities.push('desarrollo e implementación de código');
-      if (hasReports) activities.push('elaboración de documentación técnica y reportes');
-      if (hasDiagrams) activities.push('diseño de diagramas y esquemas');
-      if (hasSimulations) activities.push('simulaciones y modelado');
+      if (hasCode) activities.push('code development and implementation');
+      if (hasReports) activities.push('technical documentation and reports');
+      if (hasDiagrams) activities.push('diagram and schematic design');
+      if (hasSimulations) activities.push('simulations and modeling');
 
       if (activities.length > 0) {
-        narrativeSummary += ` El proyecto incluyó ${activities.join(', ')}.`;
+        narrativeSummary += ` The project included ${activities.join(', ')}.`;
       }
     }
   }
@@ -404,7 +404,7 @@ const renderProjectCard = (project) => {
       if (e === '.r') return 'R';
       if (e === '.mat') return 'MATLAB';
       if (e === '.dwg' || e === '.dxf') return 'AutoCAD';
-      if (e === '.sch' || e === '.pcb') return 'Diseño Electrónico';
+      if (e === '.sch' || e === '.pcb') return 'Electronic Design';
       if (e === '.vhd' || e === '.v') return 'VHDL/Verilog';
       if (e === '.ino') return 'Arduino';
       if (e === '.hex') return 'Firmware';
@@ -462,12 +462,12 @@ const renderProjectCard = (project) => {
     <div class="project-card">
       <div class="project-header">
         <h3>${escapeHtml(project.title || project.topic)}</h3>
-        ${score > 0 ? `<span class="evidence-badge" title="Puntuación de evidencia">⭐ ${score}</span>` : ''}
+        ${score > 0 ? `<span class="evidence-badge" title="Evidence score">⭐ ${score}</span>` : ''}
       </div>
 
       <div class="project-meta">
         ${dateStart ? `<span><i class="far fa-calendar"></i> ${dateStart}${dateEnd ? ` - ${dateEnd}` : ''}</span>` : ''}
-        ${files > 0 ? `<span><i class="far fa-file-alt"></i> ${formatNumber(files)} archivos</span>` : ''}
+        ${files > 0 ? `<span><i class="far fa-file-alt"></i> ${formatNumber(files)} files</span>` : ''}
       </div>
 
       <div class="project-description">
@@ -476,7 +476,7 @@ const renderProjectCard = (project) => {
 
       ${tools.length > 0 ? `
         <div class="project-tools">
-          <h4><i class="fas fa-tools"></i> Herramientas y Tecnologías</h4>
+          <h4><i class="fas fa-tools"></i> Tools &amp; Technologies</h4>
           <div class="tech-badges-container">
             ${tools.map(tool => getTechBadge(tool)).join('')}
           </div>
@@ -485,7 +485,7 @@ const renderProjectCard = (project) => {
 
       ${skills.length > 0 ? `
         <div class="project-skills">
-          <h4><i class="fas fa-lightbulb"></i> Competencias Desarrolladas</h4>
+          <h4><i class="fas fa-lightbulb"></i> Skills Developed</h4>
           <div class="skills-list">
             ${skills.map(skill => `<span class="skill-tag">${escapeHtml(skill)}</span>`).join('')}
           </div>
@@ -494,12 +494,12 @@ const renderProjectCard = (project) => {
 
       ${deliverables.length > 0 ? `
         <div class="project-deliverables">
-          <h4><i class="fas fa-box-open"></i> Entregables</h4>
+          <h4><i class="fas fa-box-open"></i> Deliverables</h4>
           <div class="deliverables-icons">
-            ${hasCode ? '<span class="deliverable-icon" title="Código fuente">💻 Código</span>' : ''}
-            ${hasReports ? '<span class="deliverable-icon" title="Documentación">📄 Reportes</span>' : ''}
-            ${hasDiagrams ? '<span class="deliverable-icon" title="Diagramas">📊 Diagramas</span>' : ''}
-            ${hasSimulations ? '<span class="deliverable-icon" title="Simulaciones">🔬 Simulaciones</span>' : ''}
+            ${hasCode ? '<span class="deliverable-icon" title="Source code">💻 Code</span>' : ''}
+            ${hasReports ? '<span class="deliverable-icon" title="Documentation">📄 Reports</span>' : ''}
+            ${hasDiagrams ? '<span class="deliverable-icon" title="Diagrams">📊 Diagrams</span>' : ''}
+            ${hasSimulations ? '<span class="deliverable-icon" title="Simulations">🔬 Simulations</span>' : ''}
           </div>
         </div>
       ` : ''}
@@ -513,8 +513,8 @@ window.viewProjectDetails = (projectId) => {
   if (!project) return;
 
   // For now, just log - can be expanded to show modal
-  console.log('Ver detalles de:', project);
-  alert(`Detalles completos de "${project.title || project.topic}" próximamente disponibles`);
+  console.log('View details:', project);
+  alert(`Full details for "${project.title || project.topic}" coming soon`);
 };
 
 // Load more projects function
